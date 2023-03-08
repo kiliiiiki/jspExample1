@@ -16,4 +16,11 @@ public interface NoticeService {
 	//단건조회
 	public NoticeVO getNotice(int nid);
 	
+	//전체 건수
+	public int getTotalCount();
+	
+	public boolean noticeModify(NoticeVO vo);
+	
+	public int noticeRemove(int nid);
+	
 }

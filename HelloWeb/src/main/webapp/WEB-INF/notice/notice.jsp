@@ -33,8 +33,44 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="2" align="center"><input type="submit" value="저장"></td>
+			<td colspan="2" align="center">
+				<button id="modBtn">수정</button>
+				<button id="delBtn">삭제</button>
+			</td>
 		</tr>
 </table>
+
+<form id="myFrm" action="noticeModify.do">
+
+</form>
+<script>
+	//수정
+	document.querySelector('#modBtn').addEventListener('click', function(){
+		let myFrm = document.querySelector('#myFrm');
+		let nid = document.querySelector('input[name="nid"]').value;
+		let title = document.querySelector('input[name="title"]').value;
+		let subject = document.querySelector('textarea[name="subject"]').textContent;
+
+		myFrm.append(document.querySelector('input[name="nid"]'));
+		myFrm.append(document.querySelector('input[name="title"]'));
+		myFrm.append(document.querySelector('textarea[name="subject"]'));
+
+		console.log(myFrm);
+
+		myFrm.submit();
+	});
+
+	//삭제
+	document.querySelector('#delBtn').addEventListener('click', function(){
+		myFrm.action = 'noticeRemove.do'; 
+		//FrontController에 NoticeRemoveControl();
+		//서비스 : noticeRemove(int nid), mapper : deleteNotice(int nid);
+		let myFrm = document.querySelector('#myFrm');
+		myFrm.append(document.querySelector('input[name="nid"]'));
+
+		myFrm.submit();
+	})
+
+</script>
 
 <%@ include file = "../includes/footer.jsp" %>

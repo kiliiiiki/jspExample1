@@ -34,6 +34,33 @@ public class NoticeServiceMybatis implements NoticeService{
 		return mapper.selectNotice(nid);
 	}
 
+	@Override
+	public int getTotalCount() {
+		return mapper.getTotalCount();
+	}
+
+	@Override
+	public boolean noticeModify(NoticeVO vo) {
+		int r = mapper.updateNotice(vo);
+		return r==1;
+	}
+
+	@Override
+	public int noticeRemove(int nid) {
+
+		return mapper.deleteNotice(nid);
+	}
+
+	
+	
+
+	
+
+	
+	
+
+	
+
 
 	
 }

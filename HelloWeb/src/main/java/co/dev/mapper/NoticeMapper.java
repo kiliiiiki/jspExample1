@@ -15,4 +15,11 @@ public interface NoticeMapper {
 	public NoticeVO selectNotice(int nid);
 	//조회수 증가
 	public int updateCount(int nid);
+	//전체 건수
+	public int getTotalCount();
+	
+	public int updateNotice(NoticeVO vo);
+	
+	public int deleteNotice(int nid);
+
 }

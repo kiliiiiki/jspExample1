@@ -11,6 +11,7 @@ import co.dev.common.Control;
 import co.dev.service.NoticeService;
 import co.dev.service.NoticeServiceMybatis;
 import co.dev.vo.NoticeVO;
+import co.dev.vo.PageDTO;
 
 public class NoticeListControl implements Control {
 
@@ -26,8 +27,10 @@ public class NoticeListControl implements Control {
 		
 		NoticeService service = new NoticeServiceMybatis();
 		List<NoticeVO> list = service.noticeList(Integer.parseInt(page));//공지사항 목록
+		int total = service.getTotalCount();
 		
 		req.setAttribute("list", list);
+		req.setAttribute("page", new PageDTO(Integer.parseInt(page), total));
 		
 		try {
 			req.getRequestDispatcher("WEB-INF/notice/noticeList.jsp").forward(req, resp);
