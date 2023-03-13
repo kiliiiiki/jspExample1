@@ -16,12 +16,12 @@ public class BoodAddControl implements Command {
 	@Override
 	public void exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String code = request.getParameter("code");
-		String title = request.getParameter("title");
-		String author = request.getParameter("author");
-		String press = request.getParameter("press");
-		String desc = request.getParameter("desc");
-		String price = request.getParameter("price");
+		String code = request.getParameter("bookCode");
+		String title = request.getParameter("bookTitle");
+		String author = request.getParameter("bookAuthor");
+		String press = request.getParameter("bookPress");
+		String desc = request.getParameter("bookDesc");
+		int price = Integer.parseInt(request.getParameter("bookPrice"));
 		
 		BookVO vo = new BookVO();
 		vo.setBookCode(code);
@@ -29,15 +29,17 @@ public class BoodAddControl implements Command {
 		vo.setBookAuthor(author);
 		vo.setBookPress(press);
 		vo.setBookDesc(desc);
-		vo.setBookPrice(Integer.parseInt(price));
+		vo.setBookPrice(price);
+		
+		System.out.println(vo);
 		
 		BookService service = new BookServiceMybatis();
-		boolean result = service.addBook(vo);
-		if(result) {
+		if (service.addBook(vo)) {
 			response.sendRedirect("bookList.do");
 		}else {
 			request.getRequestDispatcher("WEB-INF/book/bookAddForm.jsp").forward(request, response);
 		}
+
 			
 		
 		

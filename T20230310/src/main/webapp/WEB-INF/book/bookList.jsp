@@ -54,7 +54,7 @@
 							<tr>
 								<td>${book.bookCode }</td>
 								<td>${book.bookAuthor }</td>
-								<td>${book.bookTitle }</td>
+								<td><a href="bookInfo.do?code=${prod.bookCode }">${book.bookTitle }</a></td>
 								<td>${book.bookPress }</td>
 								<td>${book.bookDesc }</td>
 								<td>${book.bookPrice }</td>

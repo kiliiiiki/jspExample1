@@ -33,32 +33,32 @@
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-12 col-lg-10 col-xl-8">
-            	<form action="bookAddForm.do" method ="post" enctype="multipart/form-data">
+            	<form action="bookAdd.do" method ="post">
                 <table class="table">
                     <tbody>
                         <tr>
                             <td>도서코드</td>
-                            <td><input type="text" name="book_code"></td>
+                            <td><input type="text" name="bookCode"></td>
                         </tr>
                         <tr>
                             <td>저자</td>
-                            <td><input type="text" name="book_code"></td>
+                            <td><input type="text" name="bookAuthor"></td>
                         </tr>
                         <tr>
                             <td>도서명</td>
-                            <td><input type="text" name="book_code"></td>
+                            <td><input type="text" name="bookTitle"></td>
                         </tr>
                         <tr>
                             <td>출판사</td>
-                            <td><input type="text" name="book_code"></td>
+                            <td><input type="text" name="bookPress"></td>
                         </tr>
                         <tr>
                             <td>도서평</td>
-                            <td><textarea cols="30" rows="5" name="book_code"></textarea></td>
+                            <td><textarea cols="30" rows="5" name="bookDesc"></textarea></td>
                         </tr>
                         <tr>
                             <td>판매가</td>
-                            <td><input type="text" name="book_code"></td>
+                            <td><input type="text" name="bookPrice"></td>
                         </tr>
                         <tr>
                             <td align="center" colspan="2">
